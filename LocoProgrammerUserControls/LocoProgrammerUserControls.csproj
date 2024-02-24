@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9787D89D-3554-4A5A-89D1-24E541908F05}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LocoProgrammerUserControls</RootNamespace>
+    <AssemblyName>LocoProgrammerUserControls</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileDialogControlSaveLocoProgAspect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FileDialogControlSaveLocoProgAspect.designer.cs">
+      <DependentUpon>FileDialogControlSaveLocoProgAspect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileDialogControlOpenLocoProgAspect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FileDialogControlOpenLocoProgAspect.designer.cs">
+      <DependentUpon>FileDialogControlOpenLocoProgAspect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucButtonTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ucButtonTextBox.Designer.cs">
+      <DependentUpon>ucButtonTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FileDialogControlSaveLocoProgAspect.resx">
+      <DependentUpon>FileDialogControlSaveLocoProgAspect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileDialogControlOpenLocoProgAspect.resx">
+      <DependentUpon>FileDialogControlOpenLocoProgAspect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucButtonTextBox.resx">
+      <DependentUpon>ucButtonTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileDlgExtenders\FileDlgExtenders_v12.csproj">
+      <Project>{9b4da48c-6d11-46c9-a63d-d369e9c5fe42}</Project>
+      <Name>FileDlgExtenders_v12</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LocoProgrammerDevices\LocoProgrammerDevices.csproj">
+      <Project>{9A700D70-7113-4ABE-AF0E-44C6421AA601}</Project>
+      <Name>LocoProgrammerDevices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocoProgrammer", "LocoProgrammerGui\LocoProgrammer.csproj", "{407F4EF5-58DB-4F31-B254-14010CBBBE8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocoProgrammerUserControls", "LocoProgrammerUserControls\LocoProgrammerUserControls.csproj", "{9787D89D-3554-4A5A-89D1-24E541908F05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocoProgrammerInterfacing", "LocoProgrammerInterfacing\LocoProgrammerInterfacing.csproj", "{9F649009-AA5C-4DCD-BBA4-C819AB42D7D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocoProgrammerDevices", "LocoProgrammerDevices\LocoProgrammerDevices.csproj", "{9A700D70-7113-4ABE-AF0E-44C6421AA601}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileDlgExtenders_v12", "FileDlgExtenders\FileDlgExtenders_v12.csproj", "{9B4DA48C-6D11-46C9-A63D-D369E9C5FE42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{407F4EF5-58DB-4F31-B254-14010CBBBE8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407F4EF5-58DB-4F31-B254-14010CBBBE8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407F4EF5-58DB-4F31-B254-14010CBBBE8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407F4EF5-58DB-4F31-B254-14010CBBBE8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9787D89D-3554-4A5A-89D1-24E541908F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9787D89D-3554-4A5A-89D1-24E541908F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9787D89D-3554-4A5A-89D1-24E541908F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9787D89D-3554-4A5A-89D1-24E541908F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F649009-AA5C-4DCD-BBA4-C819AB42D7D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F649009-AA5C-4DCD-BBA4-C819AB42D7D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F649009-AA5C-4DCD-BBA4-C819AB42D7D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F649009-AA5C-4DCD-BBA4-C819AB42D7D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A700D70-7113-4ABE-AF0E-44C6421AA601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A700D70-7113-4ABE-AF0E-44C6421AA601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A700D70-7113-4ABE-AF0E-44C6421AA601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A700D70-7113-4ABE-AF0E-44C6421AA601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B4DA48C-6D11-46C9-A63D-D369E9C5FE42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4DA48C-6D11-46C9-A63D-D369E9C5FE42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B4DA48C-6D11-46C9-A63D-D369E9C5FE42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B4DA48C-6D11-46C9-A63D-D369E9C5FE42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF4DA18B-4323-4A44-874A-6D1FED733F90}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://ristretto.kluit.net:8080/tfs/kluitnet
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = LocoProgrammerUserControls\\LocoProgrammerUserControls.csproj
+		SccProjectName1 = LocoProgrammerUserControls
+		SccLocalPath1 = LocoProgrammerUserControls
+		SccProjectUniqueName2 = LocoProgrammerDevices\\LocoProgrammerDevices.csproj
+		SccProjectName2 = LocoProgrammerDevices
+		SccLocalPath2 = LocoProgrammerDevices
+		SccProjectUniqueName3 = LocoProgrammerGui\\LocoProgrammer.csproj
+		SccProjectName3 = LocoProgrammerGui
+		SccLocalPath3 = LocoProgrammerGui
+		SccProjectUniqueName4 = LocoProgrammerInterfacing\\LocoProgrammerInterfacing.csproj
+		SccProjectName4 = LocoProgrammerInterfacing
+		SccLocalPath4 = LocoProgrammerInterfacing
+		SccProjectUniqueName5 = FileDlgExtenders\\FileDlgExtenders_v12.csproj
+		SccProjectName5 = FileDlgExtenders
+		SccLocalPath5 = FileDlgExtenders
+	EndGlobalSection
+EndGlobal
