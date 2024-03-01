@@ -68,9 +68,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cmbButtonBehavior = new System.Windows.Forms.ComboBox();
             this.btnReset = new System.Windows.Forms.Button();
-            this.txtDeviceAddr = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtDeviceName = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lstBoxI2CDevices = new System.Windows.Forms.ListBox();
             this.btnI2CScan = new System.Windows.Forms.Button();
@@ -88,8 +86,6 @@
             this.btnUseDottedLoc = new System.Windows.Forms.Button();
             this.txtLocModuleLow = new System.Windows.Forms.TextBox();
             this.txtLocModuleHigh = new System.Windows.Forms.TextBox();
-            this.txtPins_Local = new LocoProgrammerUserControls.ucButtonTextBox();
-            this.txtModuleAddress_Local = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCalcPinCount = new System.Windows.Forms.Button();
@@ -98,8 +94,6 @@
             this.btnUseDotted = new System.Windows.Forms.Button();
             this.txtModuleLow = new System.Windows.Forms.TextBox();
             this.txtModuleHigh = new System.Windows.Forms.TextBox();
-            this.txtModuleCount = new LocoProgrammerUserControls.ucButtonTextBox();
-            this.txtModuleAddress = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabLNI2CConfig = new System.Windows.Forms.TabPage();
@@ -115,8 +109,6 @@
             this.txtModuleLowI2C = new System.Windows.Forms.TextBox();
             this.txtModuleHighI2C = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.txtModuleCount_I2C = new LocoProgrammerUserControls.ucButtonTextBox();
-            this.txtModuleAddress_I2C = new LocoProgrammerUserControls.ucButtonTextBox();
             this.tabPWMpinConfig = new System.Windows.Forms.TabPage();
             this.grpPWMOutput = new System.Windows.Forms.GroupBox();
             this.btnWriteAspectChain = new System.Windows.Forms.Button();
@@ -186,35 +178,27 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtLastValSensor7 = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.txtVL53Sensor7val = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.txtLastValSensor6 = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.txtVL53Sensor6val = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.txtLastValSensor5 = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.txtVL53Sensor5val = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.txtLastValSensor4 = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.txtVL53Sensor4val = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.txtLastValSensor3 = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.txtVL53Sensor3val = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.txtLastValSensor2 = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.txtVL53Sensor2val = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.txtLastValSensor1 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.txtVL53Sensor1val = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.txtLastValSensor0 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.txtVL53Sensor0val = new LocoProgrammerUserControls.ucButtonTextBox();
             this.lblSensor0 = new System.Windows.Forms.Label();
             this.btnRefreshVL530values = new System.Windows.Forms.Button();
             this.btnWatchVL53 = new System.Windows.Forms.Button();
@@ -224,12 +208,30 @@
             this.btnUseDottedVL53 = new System.Windows.Forms.Button();
             this.txtVL53ModuleLow = new System.Windows.Forms.TextBox();
             this.txtVL53ModuleHigh = new System.Windows.Forms.TextBox();
-            this.txtModuleAddress_VL53 = new LocoProgrammerUserControls.ucButtonTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripCopyright = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtLog = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.lblBootloaderVersion = new System.Windows.Forms.Label();
+            this.txtDeviceAddr = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtDeviceName = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtPins_Local = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtModuleAddress_Local = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtModuleCount = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtModuleAddress = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtModuleCount_I2C = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtModuleAddress_I2C = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtVL53Sensor7val = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtVL53Sensor6val = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtVL53Sensor5val = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtVL53Sensor4val = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtVL53Sensor3val = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtVL53Sensor2val = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtVL53Sensor1val = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtVL53Sensor0val = new LocoProgrammerUserControls.ucButtonTextBox();
+            this.txtModuleAddress_VL53 = new LocoProgrammerUserControls.ucButtonTextBox();
             this.grpConnection.SuspendLayout();
             this.grpDevices.SuspendLayout();
             this.tabDeviceConfig.SuspendLayout();
@@ -490,6 +492,8 @@
             // 
             // tabGenConfig
             // 
+            this.tabGenConfig.Controls.Add(this.lblBootloaderVersion);
+            this.tabGenConfig.Controls.Add(this.label52);
             this.tabGenConfig.Controls.Add(this.label51);
             this.tabGenConfig.Controls.Add(this.lstCompileFlags);
             this.tabGenConfig.Controls.Add(this.chkAllowFactoryDefaults);
@@ -662,17 +666,6 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // txtDeviceAddr
-            // 
-            this.txtDeviceAddr.Location = new System.Drawing.Point(117, 42);
-            this.txtDeviceAddr.MustBeNumeric = true;
-            this.txtDeviceAddr.Name = "txtDeviceAddr";
-            this.txtDeviceAddr.OriginalText = "";
-            this.txtDeviceAddr.Size = new System.Drawing.Size(100, 20);
-            this.txtDeviceAddr.TabIndex = 35;
-            this.txtDeviceAddr.ButtonClick += new System.EventHandler(this.txtDeviceAddr_ButtonClick);
-            this.txtDeviceAddr.TextChanged += new System.EventHandler(this.txtDeviceAddr_TextChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -681,16 +674,6 @@
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 34;
             this.label4.Text = "Device Addres:";
-            // 
-            // txtDeviceName
-            // 
-            this.txtDeviceName.Location = new System.Drawing.Point(117, 16);
-            this.txtDeviceName.MustBeNumeric = false;
-            this.txtDeviceName.Name = "txtDeviceName";
-            this.txtDeviceName.OriginalText = "";
-            this.txtDeviceName.Size = new System.Drawing.Size(210, 20);
-            this.txtDeviceName.TabIndex = 33;
-            this.txtDeviceName.ButtonClick += new System.EventHandler(this.txtDeviceName_ButtonClick);
             // 
             // label3
             // 
@@ -874,27 +857,6 @@
             this.txtLocModuleHigh.Size = new System.Drawing.Size(43, 20);
             this.txtLocModuleHigh.TabIndex = 26;
             // 
-            // txtPins_Local
-            // 
-            this.txtPins_Local.Location = new System.Drawing.Point(117, 155);
-            this.txtPins_Local.MustBeNumeric = true;
-            this.txtPins_Local.Name = "txtPins_Local";
-            this.txtPins_Local.OriginalText = "";
-            this.txtPins_Local.Size = new System.Drawing.Size(54, 20);
-            this.txtPins_Local.TabIndex = 25;
-            this.txtPins_Local.ButtonClick += new System.EventHandler(this.txtLocModuleCount_ButtonClick);
-            // 
-            // txtModuleAddress_Local
-            // 
-            this.txtModuleAddress_Local.Location = new System.Drawing.Point(117, 129);
-            this.txtModuleAddress_Local.MustBeNumeric = true;
-            this.txtModuleAddress_Local.Name = "txtModuleAddress_Local";
-            this.txtModuleAddress_Local.OriginalText = "";
-            this.txtModuleAddress_Local.Size = new System.Drawing.Size(54, 20);
-            this.txtModuleAddress_Local.TabIndex = 24;
-            this.txtModuleAddress_Local.ButtonClick += new System.EventHandler(this.txtModLocAddress_ButtonClick);
-            this.txtModuleAddress_Local.TextChanged += new System.EventHandler(this.txtModLocAddress_TextChanged);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -962,28 +924,6 @@
             this.txtModuleHigh.Name = "txtModuleHigh";
             this.txtModuleHigh.Size = new System.Drawing.Size(43, 20);
             this.txtModuleHigh.TabIndex = 10;
-            // 
-            // txtModuleCount
-            // 
-            this.txtModuleCount.Location = new System.Drawing.Point(116, 65);
-            this.txtModuleCount.MustBeNumeric = true;
-            this.txtModuleCount.Name = "txtModuleCount";
-            this.txtModuleCount.OriginalText = "";
-            this.txtModuleCount.Size = new System.Drawing.Size(54, 20);
-            this.txtModuleCount.TabIndex = 9;
-            this.txtModuleCount.ButtonClick += new System.EventHandler(this.txtModuleCount_ButtonClick);
-            this.txtModuleCount.TextChanged += new System.EventHandler(this.txtModuleCount_TextChanged);
-            // 
-            // txtModuleAddress
-            // 
-            this.txtModuleAddress.Location = new System.Drawing.Point(116, 39);
-            this.txtModuleAddress.MustBeNumeric = true;
-            this.txtModuleAddress.Name = "txtModuleAddress";
-            this.txtModuleAddress.OriginalText = "";
-            this.txtModuleAddress.Size = new System.Drawing.Size(54, 20);
-            this.txtModuleAddress.TabIndex = 8;
-            this.txtModuleAddress.ButtonClick += new System.EventHandler(this.txtModuleAddress_ButtonClick);
-            this.txtModuleAddress.TextChanged += new System.EventHandler(this.txtModuleAddress_TextChanged);
             // 
             // label2
             // 
@@ -1130,28 +1070,6 @@
             this.label33.Size = new System.Drawing.Size(89, 13);
             this.label33.TabIndex = 48;
             this.label33.Text = "I2C S88 Address:";
-            // 
-            // txtModuleCount_I2C
-            // 
-            this.txtModuleCount_I2C.Location = new System.Drawing.Point(118, 73);
-            this.txtModuleCount_I2C.MustBeNumeric = true;
-            this.txtModuleCount_I2C.Name = "txtModuleCount_I2C";
-            this.txtModuleCount_I2C.OriginalText = "";
-            this.txtModuleCount_I2C.Size = new System.Drawing.Size(54, 20);
-            this.txtModuleCount_I2C.TabIndex = 55;
-            this.txtModuleCount_I2C.ButtonClick += new System.EventHandler(this.txtModuleCount_I2C_ButtonClick);
-            this.txtModuleCount_I2C.TextChanged += new System.EventHandler(this.txtModuleCountI2C_TextChanged);
-            // 
-            // txtModuleAddress_I2C
-            // 
-            this.txtModuleAddress_I2C.Location = new System.Drawing.Point(117, 44);
-            this.txtModuleAddress_I2C.MustBeNumeric = true;
-            this.txtModuleAddress_I2C.Name = "txtModuleAddress_I2C";
-            this.txtModuleAddress_I2C.OriginalText = "";
-            this.txtModuleAddress_I2C.Size = new System.Drawing.Size(54, 20);
-            this.txtModuleAddress_I2C.TabIndex = 49;
-            this.txtModuleAddress_I2C.ButtonClick += new System.EventHandler(this.txtModuleAddress_I2C_ButtonClick);
-            this.txtModuleAddress_I2C.TextChanged += new System.EventHandler(this.txtModuleAddress_I2C_TextChanged);
             // 
             // tabPWMpinConfig
             // 
@@ -1940,16 +1858,6 @@
             this.label43.TabIndex = 79;
             this.label43.Text = "Last value:";
             // 
-            // txtVL53Sensor7val
-            // 
-            this.txtVL53Sensor7val.Location = new System.Drawing.Point(367, 163);
-            this.txtVL53Sensor7val.MustBeNumeric = true;
-            this.txtVL53Sensor7val.Name = "txtVL53Sensor7val";
-            this.txtVL53Sensor7val.OriginalText = "";
-            this.txtVL53Sensor7val.Size = new System.Drawing.Size(65, 20);
-            this.txtVL53Sensor7val.TabIndex = 78;
-            this.txtVL53Sensor7val.ButtonClick += new System.EventHandler(this.txtVL53Sensor7val_ButtonClick);
-            // 
             // label44
             // 
             this.label44.AutoSize = true;
@@ -1975,16 +1883,6 @@
             this.label45.Size = new System.Drawing.Size(59, 13);
             this.label45.TabIndex = 75;
             this.label45.Text = "Last value:";
-            // 
-            // txtVL53Sensor6val
-            // 
-            this.txtVL53Sensor6val.Location = new System.Drawing.Point(367, 134);
-            this.txtVL53Sensor6val.MustBeNumeric = true;
-            this.txtVL53Sensor6val.Name = "txtVL53Sensor6val";
-            this.txtVL53Sensor6val.OriginalText = "";
-            this.txtVL53Sensor6val.Size = new System.Drawing.Size(65, 20);
-            this.txtVL53Sensor6val.TabIndex = 74;
-            this.txtVL53Sensor6val.ButtonClick += new System.EventHandler(this.txtVL53Sensor6val_ButtonClick);
             // 
             // label46
             // 
@@ -2012,16 +1910,6 @@
             this.label47.TabIndex = 71;
             this.label47.Text = "Last value:";
             // 
-            // txtVL53Sensor5val
-            // 
-            this.txtVL53Sensor5val.Location = new System.Drawing.Point(367, 108);
-            this.txtVL53Sensor5val.MustBeNumeric = true;
-            this.txtVL53Sensor5val.Name = "txtVL53Sensor5val";
-            this.txtVL53Sensor5val.OriginalText = "";
-            this.txtVL53Sensor5val.Size = new System.Drawing.Size(65, 20);
-            this.txtVL53Sensor5val.TabIndex = 70;
-            this.txtVL53Sensor5val.ButtonClick += new System.EventHandler(this.txtVL53Sensor5val_ButtonClick);
-            // 
             // label48
             // 
             this.label48.AutoSize = true;
@@ -2047,16 +1935,6 @@
             this.label49.Size = new System.Drawing.Size(59, 13);
             this.label49.TabIndex = 67;
             this.label49.Text = "Last value:";
-            // 
-            // txtVL53Sensor4val
-            // 
-            this.txtVL53Sensor4val.Location = new System.Drawing.Point(367, 79);
-            this.txtVL53Sensor4val.MustBeNumeric = true;
-            this.txtVL53Sensor4val.Name = "txtVL53Sensor4val";
-            this.txtVL53Sensor4val.OriginalText = "";
-            this.txtVL53Sensor4val.Size = new System.Drawing.Size(65, 20);
-            this.txtVL53Sensor4val.TabIndex = 66;
-            this.txtVL53Sensor4val.ButtonClick += new System.EventHandler(this.txtVL53Sensor4val_ButtonClick);
             // 
             // label50
             // 
@@ -2084,16 +1962,6 @@
             this.label41.TabIndex = 63;
             this.label41.Text = "Last value:";
             // 
-            // txtVL53Sensor3val
-            // 
-            this.txtVL53Sensor3val.Location = new System.Drawing.Point(74, 163);
-            this.txtVL53Sensor3val.MustBeNumeric = true;
-            this.txtVL53Sensor3val.Name = "txtVL53Sensor3val";
-            this.txtVL53Sensor3val.OriginalText = "";
-            this.txtVL53Sensor3val.Size = new System.Drawing.Size(65, 20);
-            this.txtVL53Sensor3val.TabIndex = 62;
-            this.txtVL53Sensor3val.ButtonClick += new System.EventHandler(this.txtVL53Sensor3val_ButtonClick);
-            // 
             // label42
             // 
             this.label42.AutoSize = true;
@@ -2119,16 +1987,6 @@
             this.label39.Size = new System.Drawing.Size(59, 13);
             this.label39.TabIndex = 59;
             this.label39.Text = "Last value:";
-            // 
-            // txtVL53Sensor2val
-            // 
-            this.txtVL53Sensor2val.Location = new System.Drawing.Point(74, 134);
-            this.txtVL53Sensor2val.MustBeNumeric = true;
-            this.txtVL53Sensor2val.Name = "txtVL53Sensor2val";
-            this.txtVL53Sensor2val.OriginalText = "";
-            this.txtVL53Sensor2val.Size = new System.Drawing.Size(65, 20);
-            this.txtVL53Sensor2val.TabIndex = 58;
-            this.txtVL53Sensor2val.ButtonClick += new System.EventHandler(this.txtVL53Sensor2val_ButtonClick);
             // 
             // label40
             // 
@@ -2156,16 +2014,6 @@
             this.label26.TabIndex = 55;
             this.label26.Text = "Last value:";
             // 
-            // txtVL53Sensor1val
-            // 
-            this.txtVL53Sensor1val.Location = new System.Drawing.Point(74, 108);
-            this.txtVL53Sensor1val.MustBeNumeric = true;
-            this.txtVL53Sensor1val.Name = "txtVL53Sensor1val";
-            this.txtVL53Sensor1val.OriginalText = "";
-            this.txtVL53Sensor1val.Size = new System.Drawing.Size(65, 20);
-            this.txtVL53Sensor1val.TabIndex = 54;
-            this.txtVL53Sensor1val.ButtonClick += new System.EventHandler(this.txtVL53Sensor1val_ButtonClick);
-            // 
             // label38
             // 
             this.label38.AutoSize = true;
@@ -2191,16 +2039,6 @@
             this.label25.Size = new System.Drawing.Size(59, 13);
             this.label25.TabIndex = 51;
             this.label25.Text = "Last value:";
-            // 
-            // txtVL53Sensor0val
-            // 
-            this.txtVL53Sensor0val.Location = new System.Drawing.Point(74, 79);
-            this.txtVL53Sensor0val.MustBeNumeric = true;
-            this.txtVL53Sensor0val.Name = "txtVL53Sensor0val";
-            this.txtVL53Sensor0val.OriginalText = "";
-            this.txtVL53Sensor0val.Size = new System.Drawing.Size(65, 20);
-            this.txtVL53Sensor0val.TabIndex = 50;
-            this.txtVL53Sensor0val.ButtonClick += new System.EventHandler(this.txtVL53Sensor0val_ButtonClick);
             // 
             // lblSensor0
             // 
@@ -2282,17 +2120,6 @@
             this.txtVL53ModuleHigh.Size = new System.Drawing.Size(43, 20);
             this.txtVL53ModuleHigh.TabIndex = 41;
             // 
-            // txtModuleAddress_VL53
-            // 
-            this.txtModuleAddress_VL53.Location = new System.Drawing.Point(126, 41);
-            this.txtModuleAddress_VL53.MustBeNumeric = true;
-            this.txtModuleAddress_VL53.Name = "txtModuleAddress_VL53";
-            this.txtModuleAddress_VL53.OriginalText = "";
-            this.txtModuleAddress_VL53.Size = new System.Drawing.Size(54, 20);
-            this.txtModuleAddress_VL53.TabIndex = 40;
-            this.txtModuleAddress_VL53.ButtonClick += new System.EventHandler(this.txtModuleAddress_VL53_ButtonClick);
-            this.txtModuleAddress_VL53.TextChanged += new System.EventHandler(this.txtModuleAddress_VL53_TextChanged);
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -2339,6 +2166,201 @@
             this.txtLog.Size = new System.Drawing.Size(792, 75);
             this.txtLog.TabIndex = 13;
             this.txtLog.WordWrap = false;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(377, 187);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(99, 13);
+            this.label52.TabIndex = 50;
+            this.label52.Text = "Bootloader Version:";
+            // 
+            // lblBootloaderVersion
+            // 
+            this.lblBootloaderVersion.AutoSize = true;
+            this.lblBootloaderVersion.Location = new System.Drawing.Point(495, 187);
+            this.lblBootloaderVersion.Name = "lblBootloaderVersion";
+            this.lblBootloaderVersion.Size = new System.Drawing.Size(13, 13);
+            this.lblBootloaderVersion.TabIndex = 51;
+            this.lblBootloaderVersion.Text = "?";
+            // 
+            // txtDeviceAddr
+            // 
+            this.txtDeviceAddr.Location = new System.Drawing.Point(117, 42);
+            this.txtDeviceAddr.MustBeNumeric = true;
+            this.txtDeviceAddr.Name = "txtDeviceAddr";
+            this.txtDeviceAddr.OriginalText = "";
+            this.txtDeviceAddr.Size = new System.Drawing.Size(100, 20);
+            this.txtDeviceAddr.TabIndex = 35;
+            this.txtDeviceAddr.ButtonClick += new System.EventHandler(this.txtDeviceAddr_ButtonClick);
+            this.txtDeviceAddr.TextChanged += new System.EventHandler(this.txtDeviceAddr_TextChanged);
+            // 
+            // txtDeviceName
+            // 
+            this.txtDeviceName.Location = new System.Drawing.Point(117, 16);
+            this.txtDeviceName.MustBeNumeric = false;
+            this.txtDeviceName.Name = "txtDeviceName";
+            this.txtDeviceName.OriginalText = "";
+            this.txtDeviceName.Size = new System.Drawing.Size(210, 20);
+            this.txtDeviceName.TabIndex = 33;
+            this.txtDeviceName.ButtonClick += new System.EventHandler(this.txtDeviceName_ButtonClick);
+            // 
+            // txtPins_Local
+            // 
+            this.txtPins_Local.Location = new System.Drawing.Point(117, 155);
+            this.txtPins_Local.MustBeNumeric = true;
+            this.txtPins_Local.Name = "txtPins_Local";
+            this.txtPins_Local.OriginalText = "";
+            this.txtPins_Local.Size = new System.Drawing.Size(54, 20);
+            this.txtPins_Local.TabIndex = 25;
+            this.txtPins_Local.ButtonClick += new System.EventHandler(this.txtLocModuleCount_ButtonClick);
+            // 
+            // txtModuleAddress_Local
+            // 
+            this.txtModuleAddress_Local.Location = new System.Drawing.Point(117, 129);
+            this.txtModuleAddress_Local.MustBeNumeric = true;
+            this.txtModuleAddress_Local.Name = "txtModuleAddress_Local";
+            this.txtModuleAddress_Local.OriginalText = "";
+            this.txtModuleAddress_Local.Size = new System.Drawing.Size(54, 20);
+            this.txtModuleAddress_Local.TabIndex = 24;
+            this.txtModuleAddress_Local.ButtonClick += new System.EventHandler(this.txtModLocAddress_ButtonClick);
+            this.txtModuleAddress_Local.TextChanged += new System.EventHandler(this.txtModLocAddress_TextChanged);
+            // 
+            // txtModuleCount
+            // 
+            this.txtModuleCount.Location = new System.Drawing.Point(116, 65);
+            this.txtModuleCount.MustBeNumeric = true;
+            this.txtModuleCount.Name = "txtModuleCount";
+            this.txtModuleCount.OriginalText = "";
+            this.txtModuleCount.Size = new System.Drawing.Size(54, 20);
+            this.txtModuleCount.TabIndex = 9;
+            this.txtModuleCount.ButtonClick += new System.EventHandler(this.txtModuleCount_ButtonClick);
+            this.txtModuleCount.TextChanged += new System.EventHandler(this.txtModuleCount_TextChanged);
+            // 
+            // txtModuleAddress
+            // 
+            this.txtModuleAddress.Location = new System.Drawing.Point(116, 39);
+            this.txtModuleAddress.MustBeNumeric = true;
+            this.txtModuleAddress.Name = "txtModuleAddress";
+            this.txtModuleAddress.OriginalText = "";
+            this.txtModuleAddress.Size = new System.Drawing.Size(54, 20);
+            this.txtModuleAddress.TabIndex = 8;
+            this.txtModuleAddress.ButtonClick += new System.EventHandler(this.txtModuleAddress_ButtonClick);
+            this.txtModuleAddress.TextChanged += new System.EventHandler(this.txtModuleAddress_TextChanged);
+            // 
+            // txtModuleCount_I2C
+            // 
+            this.txtModuleCount_I2C.Location = new System.Drawing.Point(118, 73);
+            this.txtModuleCount_I2C.MustBeNumeric = true;
+            this.txtModuleCount_I2C.Name = "txtModuleCount_I2C";
+            this.txtModuleCount_I2C.OriginalText = "";
+            this.txtModuleCount_I2C.Size = new System.Drawing.Size(54, 20);
+            this.txtModuleCount_I2C.TabIndex = 55;
+            this.txtModuleCount_I2C.ButtonClick += new System.EventHandler(this.txtModuleCount_I2C_ButtonClick);
+            this.txtModuleCount_I2C.TextChanged += new System.EventHandler(this.txtModuleCountI2C_TextChanged);
+            // 
+            // txtModuleAddress_I2C
+            // 
+            this.txtModuleAddress_I2C.Location = new System.Drawing.Point(117, 44);
+            this.txtModuleAddress_I2C.MustBeNumeric = true;
+            this.txtModuleAddress_I2C.Name = "txtModuleAddress_I2C";
+            this.txtModuleAddress_I2C.OriginalText = "";
+            this.txtModuleAddress_I2C.Size = new System.Drawing.Size(54, 20);
+            this.txtModuleAddress_I2C.TabIndex = 49;
+            this.txtModuleAddress_I2C.ButtonClick += new System.EventHandler(this.txtModuleAddress_I2C_ButtonClick);
+            this.txtModuleAddress_I2C.TextChanged += new System.EventHandler(this.txtModuleAddress_I2C_TextChanged);
+            // 
+            // txtVL53Sensor7val
+            // 
+            this.txtVL53Sensor7val.Location = new System.Drawing.Point(367, 163);
+            this.txtVL53Sensor7val.MustBeNumeric = true;
+            this.txtVL53Sensor7val.Name = "txtVL53Sensor7val";
+            this.txtVL53Sensor7val.OriginalText = "";
+            this.txtVL53Sensor7val.Size = new System.Drawing.Size(65, 20);
+            this.txtVL53Sensor7val.TabIndex = 78;
+            this.txtVL53Sensor7val.ButtonClick += new System.EventHandler(this.txtVL53Sensor7val_ButtonClick);
+            // 
+            // txtVL53Sensor6val
+            // 
+            this.txtVL53Sensor6val.Location = new System.Drawing.Point(367, 134);
+            this.txtVL53Sensor6val.MustBeNumeric = true;
+            this.txtVL53Sensor6val.Name = "txtVL53Sensor6val";
+            this.txtVL53Sensor6val.OriginalText = "";
+            this.txtVL53Sensor6val.Size = new System.Drawing.Size(65, 20);
+            this.txtVL53Sensor6val.TabIndex = 74;
+            this.txtVL53Sensor6val.ButtonClick += new System.EventHandler(this.txtVL53Sensor6val_ButtonClick);
+            // 
+            // txtVL53Sensor5val
+            // 
+            this.txtVL53Sensor5val.Location = new System.Drawing.Point(367, 108);
+            this.txtVL53Sensor5val.MustBeNumeric = true;
+            this.txtVL53Sensor5val.Name = "txtVL53Sensor5val";
+            this.txtVL53Sensor5val.OriginalText = "";
+            this.txtVL53Sensor5val.Size = new System.Drawing.Size(65, 20);
+            this.txtVL53Sensor5val.TabIndex = 70;
+            this.txtVL53Sensor5val.ButtonClick += new System.EventHandler(this.txtVL53Sensor5val_ButtonClick);
+            // 
+            // txtVL53Sensor4val
+            // 
+            this.txtVL53Sensor4val.Location = new System.Drawing.Point(367, 79);
+            this.txtVL53Sensor4val.MustBeNumeric = true;
+            this.txtVL53Sensor4val.Name = "txtVL53Sensor4val";
+            this.txtVL53Sensor4val.OriginalText = "";
+            this.txtVL53Sensor4val.Size = new System.Drawing.Size(65, 20);
+            this.txtVL53Sensor4val.TabIndex = 66;
+            this.txtVL53Sensor4val.ButtonClick += new System.EventHandler(this.txtVL53Sensor4val_ButtonClick);
+            // 
+            // txtVL53Sensor3val
+            // 
+            this.txtVL53Sensor3val.Location = new System.Drawing.Point(74, 163);
+            this.txtVL53Sensor3val.MustBeNumeric = true;
+            this.txtVL53Sensor3val.Name = "txtVL53Sensor3val";
+            this.txtVL53Sensor3val.OriginalText = "";
+            this.txtVL53Sensor3val.Size = new System.Drawing.Size(65, 20);
+            this.txtVL53Sensor3val.TabIndex = 62;
+            this.txtVL53Sensor3val.ButtonClick += new System.EventHandler(this.txtVL53Sensor3val_ButtonClick);
+            // 
+            // txtVL53Sensor2val
+            // 
+            this.txtVL53Sensor2val.Location = new System.Drawing.Point(74, 134);
+            this.txtVL53Sensor2val.MustBeNumeric = true;
+            this.txtVL53Sensor2val.Name = "txtVL53Sensor2val";
+            this.txtVL53Sensor2val.OriginalText = "";
+            this.txtVL53Sensor2val.Size = new System.Drawing.Size(65, 20);
+            this.txtVL53Sensor2val.TabIndex = 58;
+            this.txtVL53Sensor2val.ButtonClick += new System.EventHandler(this.txtVL53Sensor2val_ButtonClick);
+            // 
+            // txtVL53Sensor1val
+            // 
+            this.txtVL53Sensor1val.Location = new System.Drawing.Point(74, 108);
+            this.txtVL53Sensor1val.MustBeNumeric = true;
+            this.txtVL53Sensor1val.Name = "txtVL53Sensor1val";
+            this.txtVL53Sensor1val.OriginalText = "";
+            this.txtVL53Sensor1val.Size = new System.Drawing.Size(65, 20);
+            this.txtVL53Sensor1val.TabIndex = 54;
+            this.txtVL53Sensor1val.ButtonClick += new System.EventHandler(this.txtVL53Sensor1val_ButtonClick);
+            // 
+            // txtVL53Sensor0val
+            // 
+            this.txtVL53Sensor0val.Location = new System.Drawing.Point(74, 79);
+            this.txtVL53Sensor0val.MustBeNumeric = true;
+            this.txtVL53Sensor0val.Name = "txtVL53Sensor0val";
+            this.txtVL53Sensor0val.OriginalText = "";
+            this.txtVL53Sensor0val.Size = new System.Drawing.Size(65, 20);
+            this.txtVL53Sensor0val.TabIndex = 50;
+            this.txtVL53Sensor0val.ButtonClick += new System.EventHandler(this.txtVL53Sensor0val_ButtonClick);
+            // 
+            // txtModuleAddress_VL53
+            // 
+            this.txtModuleAddress_VL53.Location = new System.Drawing.Point(126, 41);
+            this.txtModuleAddress_VL53.MustBeNumeric = true;
+            this.txtModuleAddress_VL53.Name = "txtModuleAddress_VL53";
+            this.txtModuleAddress_VL53.OriginalText = "";
+            this.txtModuleAddress_VL53.Size = new System.Drawing.Size(54, 20);
+            this.txtModuleAddress_VL53.TabIndex = 40;
+            this.txtModuleAddress_VL53.ButtonClick += new System.EventHandler(this.txtModuleAddress_VL53_ButtonClick);
+            this.txtModuleAddress_VL53.TextChanged += new System.EventHandler(this.txtModuleAddress_VL53_TextChanged);
             // 
             // frmMain
             // 
@@ -2587,6 +2609,8 @@
         private System.Windows.Forms.Label lblLastAddrI2C;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.ListBox lstCompileFlags;
+        private System.Windows.Forms.Label lblBootloaderVersion;
+        private System.Windows.Forms.Label label52;
     }
 }
 

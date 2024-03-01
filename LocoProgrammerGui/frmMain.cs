@@ -390,6 +390,16 @@ namespace LocoProgrammer
                 lblExternalNVRAM.Text = (lncLocoReader.hasExternalNVRAM) + " KBytes";
                 lblPWMModulesOnline.Text = lncLocoReader.GetOnlinePWMmodules();
 
+                uint val = lncLocoReader.GetCVValue(CustDefines.CVADDRESS.CV_ACCESSORY_BOOTLOADER_VERSION);
+                if (val != 0 && val != 0xFFFF)
+                {
+                    lblBootloaderVersion.Text = (val >> 4).ToString() + "." + (val & 0xF).ToString();
+                }
+                else
+                {
+                    lblBootloaderVersion.Text = "Unkown";
+                }
+
                 txtVL53Sensor0val.OriginalText = lncLocoReader.GetSVValueFromCV(CustDefines.CVADDRESS.CV_ACCESSORY_VL53L0X_SENSORVAL_START, true).ToString();
                 txtVL53Sensor1val.OriginalText = lncLocoReader.GetSVValueFromCV(CustDefines.CVADDRESS.CV_ACCESSORY_VL53L0X_SENSORVAL_START, false).ToString();
                 txtVL53Sensor2val.OriginalText = lncLocoReader.GetSVValueFromCV(CustDefines.CVADDRESS.CV_ACCESSORY_VL53L0X_SENSORVAL_START + 1, true).ToString();
@@ -948,13 +958,17 @@ namespace LocoProgrammer
 
         private void btnDisconnect_Click(object sender, EventArgs e)
         {
-            if (LoconetComs != null && sender != null)
+            try
             {
-                LoconetComs.Disconnect();
-            }
-            LoconetComs.LoconetFrameRecieved -= LoconetComs_LoconetFrameRecieved;
-            LoconetComs.LoconetConnectionClosed -= LoconetComs_LoconetConnectionClosed;
+                if (LoconetComs != null && sender != null)
+                {
+                    LoconetComs.Disconnect();
+                }
+                LoconetComs.LoconetFrameRecieved -= LoconetComs_LoconetFrameRecieved;
+                LoconetComs.LoconetConnectionClosed -= LoconetComs_LoconetConnectionClosed;
 
+            }
+            catch { }
             LoconetComs = null;
             lnDeviceList = null;
             btnConnect.Visible = true;
