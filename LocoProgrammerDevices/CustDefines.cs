@@ -140,7 +140,8 @@ namespace LocoProgrammerDevices
 
             CV_ACCESSORY_BOOTLOADER_VERSION = 0x0017,
 
-            CV_ACCESSORY_DECODER_ASPECT_DATA_START = 0x0028, //(CV 28 start ==> 0x4F byte pos)
+            //OLD CV_ACCESSORY_DECODER_ASPECT_DATA_START = 0x0028, //(CV 28 start ==> 0x4F byte pos)
+            CV_ACCESSORY_DECODER_ASPECT_DATA_START = 0x0040, //(CV 40 start ==> 0x80 byte pos)
             SV_ACCESSORY_DECODER_ASPECT_START = CV_ACCESSORY_DECODER_ASPECT_DATA_START * 2, //(CV 48 start ==> 96 byte pos)
 
             CV_ACCESSORY_DECODER_ASPECT_PIN_COUNT_NO_EXTNVRAM = 32, //32 PINS
