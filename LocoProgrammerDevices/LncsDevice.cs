@@ -372,13 +372,13 @@ namespace LocoProgrammerDevices
                 case 0x29:
                     return "VL53L0X Reporter\t[ID: O-VL53M]";
                 case uint n when (n <= 0x28 && n >= 0x20):
-                    return "(Unsupported)Probably PCF8574A\t[ID: U-" + (address - 0x20 + 1).ToString("D2") + "]";
+                    return "Occupation reporter T\t[ID: O-" + (address - 0x20 + 1).ToString("D2") + "]";
                 case 0x50:
                     return "AT24CXX NVRAM\t[ID: NVRAM]";
                 case 0x58:
                     return "AT24CXX ADDR2\t[ID: NVRAM]";
                 case uint n when (n <= 0x40 && n >= 0x38):
-                    return "Occupation reporter\t[ID: O-" + (address - 0x38 + 1).ToString("D2") + "]";
+                    return "Occupation reporter AT\t[ID: O-" + (address - 0x38 + 1).ToString("D2") + "]";
                 case 0x60:
                 case 0x61:
                 case 0x62:
