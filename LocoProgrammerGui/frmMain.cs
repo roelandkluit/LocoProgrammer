@@ -383,7 +383,16 @@ namespace LocoProgrammer
                 txtModuleAddress.OriginalText = lncLocoReader.GetCVValue(CustDefines.CVADDRESS.CV_ACCESSORY_DECODER_S88_START_ADDRES).ToString();
                 txtModuleCount.OriginalText = lncLocoReader.GetCVValue(CustDefines.CVADDRESS.CV_ACCESSORY_DECODER_S88_ADDRES_COUNT).ToString();
                 txtModuleAddress_I2C.OriginalText = lncLocoReader.GetCVValue(CustDefines.CVADDRESS.CV_ACCESSORY_DECODER_S88_I2C_START_ADDRES).ToString();
-                txtModuleCount_I2C.OriginalText = lncLocoReader.GetCVValue(CustDefines.CVADDRESS.CV_ACCESSORY_DECODER_S88_I2C_ADDRES_COUNT).ToString();
+                ushort valI2C = lncLocoReader.GetCVValue(CustDefines.CVADDRESS.CV_ACCESSORY_DECODER_S88_I2C_ADDRES_COUNT);
+                txtModuleCount_I2C.OriginalText = (valI2C & 0xFF).ToString();
+                if((valI2C >> 8) != 0)
+                {
+                    chkUsePCF8574T.Checked = true;
+                }
+                else
+                {
+                    chkUsePCF8574T.Checked = false;
+                }
                 txtDeviceAddr.OriginalText = lncLocoReader.DeviceAddres.ToString();
                 txtPins_Local.OriginalText = lncLocoReader.GetCVValue(CustDefines.CVADDRESS.CV_ACCESSORY_DECODER_LOCAL_READ_COUNT).ToString();
                 txtModuleAddress_Local.OriginalText = lncLocoReader.GetCVValue(CustDefines.CVADDRESS.CV_ACCESSORY_DECODER_LOCAL_START_ADDRES).ToString();
@@ -1051,7 +1060,13 @@ namespace LocoProgrammer
 
         private void txtModuleCount_I2C_ButtonClick(object sender, EventArgs e)
         {
-            selectedLncsDevice.ChangeCV((ushort)CustDefines.CVADDRESS.CV_ACCESSORY_DECODER_S88_I2C_ADDRES_COUNT, ushort.Parse(txtModuleCount_I2C.Text));
+            ushort val = (ushort)(ushort.Parse(txtModuleCount_I2C.Text) & 0x1F);
+            if (chkUsePCF8574T.Checked)
+            {
+                //Set bit 9 to high, indicating T instead of AT chips
+                val += 1 << 8;
+            }
+            selectedLncsDevice.ChangeCV((ushort)CustDefines.CVADDRESS.CV_ACCESSORY_DECODER_S88_I2C_ADDRES_COUNT, val);
             txtModuleCount_I2C.OriginalText = txtModuleCount_I2C.Text;
         }
 
