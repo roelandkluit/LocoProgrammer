@@ -276,9 +276,9 @@
             this.chkHandshake.AutoSize = true;
             this.chkHandshake.Location = new System.Drawing.Point(340, 18);
             this.chkHandshake.Name = "chkHandshake";
-            this.chkHandshake.Size = new System.Drawing.Size(98, 17);
+            this.chkHandshake.Size = new System.Drawing.Size(175, 17);
             this.chkHandshake.TabIndex = 12;
-            this.chkHandshake.Text = "No Handshake";
+            this.chkHandshake.Text = "No Handshake (For Intellibox 2)";
             this.chkHandshake.UseVisualStyleBackColor = true;
             // 
             // btnStop

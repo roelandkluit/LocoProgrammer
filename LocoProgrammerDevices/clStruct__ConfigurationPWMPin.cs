@@ -65,6 +65,7 @@ namespace LocoProgrammerDevices
             AspectMultibit = 1,
             MultibitOff = 2,
             MultibitOn = 3,
+            SetPWMValue = 4,
             RedViaYellow = 10, 
             Blink = 12,
             BlinkInvert = 13,

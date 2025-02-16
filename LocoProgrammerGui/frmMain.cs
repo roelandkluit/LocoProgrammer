@@ -63,6 +63,7 @@ using LocoProgrammerDevices;
 using System.Reflection;
 using System.IO;
 using System.Threading;
+using Microsoft.Win32;
 
 namespace LocoProgrammer
 {
@@ -488,6 +489,56 @@ namespace LocoProgrammer
             txtLog.SelectionStart = txtLog.Text.Length;
             txtLog.ScrollToCaret();
         }
+        private void LoadSettings()
+        {
+            try
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\LocoProgrammer");
+
+                if (key != null)
+                {
+                    chkHandshake.Checked = Convert.ToBoolean(key.GetValue("Handshake", false));
+                    rbLocoSerial.Checked = Convert.ToBoolean(key.GetValue("LocoSerial", false));
+                    rbLocoTCP.Checked = Convert.ToBoolean(key.GetValue("LocoTCP", false));
+                    cmbSerialPorts.SelectedItem = key.GetValue("SerialPorts", "").ToString();
+                    cmbSerialSpeed.SelectedItem = key.GetValue("SerialSpeed", "").ToString();
+                    txtServer.Text = key.GetValue("Server", "").ToString();
+                    txtPort.Text = key.GetValue("Port", "").ToString();
+                    chkReadOnPinSelect.Checked = Convert.ToBoolean(key.GetValue("ReadOnSelect", false));
+                    frmMonitorOccupation.enableSound = Convert.ToBoolean(key.GetValue("EnableSound", false));
+
+                    key.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show(this, "Unable to load settings from registry", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveSettings(bool isOnClose)
+        {
+            RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\LocoProgrammer");
+
+            if (isOnClose)
+            {
+                key.SetValue("ReadOnSelect", chkReadOnPinSelect.Checked);
+                key.SetValue("EnableSound", frmMonitorOccupation.enableSound);
+            }
+            else
+            { 
+                key.SetValue("Handshake", chkHandshake.Checked);
+                key.SetValue("LocoSerial", rbLocoSerial.Checked);
+                key.SetValue("LocoTCP", rbLocoTCP.Checked);
+                key.SetValue("SerialPorts", cmbSerialPorts.SelectedItem?.ToString() ?? "");
+                key.SetValue("SerialSpeed", cmbSerialSpeed.SelectedItem?.ToString() ?? "");
+                key.SetValue("Server", txtServer.Text);
+                key.SetValue("Port", txtPort.Text);
+            }
+
+            key.Close();
+        }
+
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -495,6 +546,7 @@ namespace LocoProgrammer
             cmbSerialSpeed.SelectedIndex = 0;
             cmbSerialPorts.Text = "COM7";
             this.Text = this.Text + " [" + Assembly.GetExecutingAssembly().GetName().Version.ToString() + "] - " + Assembly.GetExecutingAssembly().GetLinkerTime();
+            LoadSettings();
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -521,6 +573,7 @@ namespace LocoProgrammer
                     lnDeviceList = new LNcsDeviceManager(LoconetComs, this);
                     lnDeviceList.onLoconetDeviceDiscovered += LnDiscover_onLoconetDeviceDiscovered;
                 }
+                SaveSettings(false);
             }
             catch (Exception ex)
             {
@@ -556,6 +609,7 @@ namespace LocoProgrammer
                     LoconetComs.Disconnect();
                 }
             }
+            SaveSettings(true);
         }
 
         private void cmbSerialPorts_Enter(object sender, EventArgs e)
@@ -995,6 +1049,7 @@ namespace LocoProgrammer
             SelectedLncsDevice = null;
             lvDevices.Items.Clear();
             UpdateStatus();
+            rbLocoMethod_CheckedChanged(null, null);
         }
 
         private void btnI2CScan_Click(object sender, EventArgs e)
