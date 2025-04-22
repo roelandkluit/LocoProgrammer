@@ -1151,42 +1151,42 @@ namespace LocoProgrammer
 
         private void lblAspectR0_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Red0, txtData1Red0, cmbInstrRed0, "Red Aspect 1");
+            ShowAspectEditor(txtData0Red0, txtData1Red0, cmbInstrRed0, "Red\\Thrown Aspect 1");
         }
 
         private void lblAspectR1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Red1, txtData1Red1, cmbInstrRed1, "Red Aspect 2");
+            ShowAspectEditor(txtData0Red1, txtData1Red1, cmbInstrRed1, "Red\\Thrown Aspect 2");
         }
 
         private void lblAspectR2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Red2, txtData1Red2, cmbInstrRed2, "Red Aspect 3");
+            ShowAspectEditor(txtData0Red2, txtData1Red2, cmbInstrRed2, "Red\\Thrown Aspect 3");
         }
 
         private void lblAspectR3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Red3, txtData1Red3, cmbInstrRed3, "Red Aspect 4");
+            ShowAspectEditor(txtData0Red3, txtData1Red3, cmbInstrRed3, "Red\\Thrown Aspect 4");
         }
 
         private void lblAspectG0_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Green0, txtData1Green0, cmbInstrGreen0, "Green Aspect 1");
+            ShowAspectEditor(txtData0Green0, txtData1Green0, cmbInstrGreen0, "Green\\Closed Aspect 1");
         }
 
         private void lblAspectG1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Green1, txtData1Green1, cmbInstrGreen1, "Green Aspect 2");
+            ShowAspectEditor(txtData0Green1, txtData1Green1, cmbInstrGreen1, "Green\\Closed Aspect 2");
         }
 
         private void lblAspectG2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Green2, txtData1Green2, cmbInstrGreen2, "Green Aspect 3");
+            ShowAspectEditor(txtData0Green2, txtData1Green2, cmbInstrGreen2, "Green\\Closed Aspect 3");
         }
 
         private void lblAspectG3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Green3, txtData1Green3, cmbInstrGreen3, "Green Aspect 4");
+            ShowAspectEditor(txtData0Green3, txtData1Green3, cmbInstrGreen3, "Green\\Closed Aspect 4");
         }
 
         private void btnCalcPinCount_Click(object sender, EventArgs e)

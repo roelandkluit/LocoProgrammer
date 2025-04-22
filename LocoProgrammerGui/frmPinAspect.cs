@@ -117,7 +117,7 @@ namespace LocoProgrammer
                     tNewTextboxEntry.Tag = txtTag;
                     tNewTextboxEntry.ButtonClick += TextboxEntry_ButtonClick;
 
-                    lNewMaxValLabel.Text = "Value: 0.." + maxValue;
+                    lNewMaxValLabel.Text = "Value: 0 .. " + maxValue;
                     lNewMaxValLabel.Name = "LabelMax" + index;
                     lNewMaxValLabel.Left = tNewTextboxEntry.Left + tNewTextboxEntry.Width + 5;
                     lNewMaxValLabel.AutoSize = true;
@@ -242,7 +242,7 @@ namespace LocoProgrammer
                         imask |= 1 << 7 - i;
                     }
                     int retval = val & imask;
-                    maxIntVal = (eBit + 1 - sBit);
+                    maxIntVal = (eBit - sBit);
                     retval = retval >> (7 - eBit);
                     string bitValue = Convert.ToString(retval, 2).PadLeft(maxIntVal, '0');
                     return Reverse(bitValue);
