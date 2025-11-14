@@ -117,7 +117,7 @@ namespace LocoProgrammer
                     tNewTextboxEntry.Tag = txtTag;
                     tNewTextboxEntry.ButtonClick += TextboxEntry_ButtonClick;
 
-                    lNewMaxValLabel.Text = "max: " + maxValue;
+                    lNewMaxValLabel.Text = "Value: 0 .. " + maxValue;
                     lNewMaxValLabel.Name = "LabelMax" + index;
                     lNewMaxValLabel.Left = tNewTextboxEntry.Left + tNewTextboxEntry.Width + 5;
                     lNewMaxValLabel.AutoSize = true;
@@ -242,7 +242,7 @@ namespace LocoProgrammer
                         imask |= 1 << 7 - i;
                     }
                     int retval = val & imask;
-                    maxIntVal = (eBit + 1 - sBit);
+                    maxIntVal = (eBit - sBit);
                     retval = retval >> (7 - eBit);
                     string bitValue = Convert.ToString(retval, 2).PadLeft(maxIntVal, '0');
                     return Reverse(bitValue);
@@ -323,6 +323,10 @@ namespace LocoProgrammer
                 case LocoProgrammerDevices.Struct__ConfigurationPWMPin.PIN_ASPECT_INSTRUCTION.SetServoNoDisconnect:
                     Mask0 = "Servo Pin Index~0:2|Servo Movement Time~3:7";
                     Mask1 = "Servo Position~0:7";
+                    return true;
+                case LocoProgrammerDevices.Struct__ConfigurationPWMPin.PIN_ASPECT_INSTRUCTION.SetPWMValue:
+                    Mask0 = "PWM Pin Index~0:2|PWM Dim Time~3:7";
+                    Mask1 = "PWM Value~0:7";
                     return true;
             }
             return false;

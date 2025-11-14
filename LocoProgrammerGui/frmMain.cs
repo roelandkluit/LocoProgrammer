@@ -63,6 +63,7 @@ using LocoProgrammerDevices;
 using System.Reflection;
 using System.IO;
 using System.Threading;
+using Microsoft.Win32;
 
 namespace LocoProgrammer
 {
@@ -488,6 +489,56 @@ namespace LocoProgrammer
             txtLog.SelectionStart = txtLog.Text.Length;
             txtLog.ScrollToCaret();
         }
+        private void LoadSettings()
+        {
+            try
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\LocoProgrammer");
+
+                if (key != null)
+                {
+                    chkHandshake.Checked = Convert.ToBoolean(key.GetValue("Handshake", false));
+                    rbLocoSerial.Checked = Convert.ToBoolean(key.GetValue("LocoSerial", false));
+                    rbLocoTCP.Checked = Convert.ToBoolean(key.GetValue("LocoTCP", false));
+                    cmbSerialPorts.SelectedItem = key.GetValue("SerialPorts", "").ToString();
+                    cmbSerialSpeed.SelectedItem = key.GetValue("SerialSpeed", "").ToString();
+                    txtServer.Text = key.GetValue("Server", "").ToString();
+                    txtPort.Text = key.GetValue("Port", "").ToString();
+                    chkReadOnPinSelect.Checked = Convert.ToBoolean(key.GetValue("ReadOnSelect", false));
+                    frmMonitorOccupation.enableSound = Convert.ToBoolean(key.GetValue("EnableSound", false));
+
+                    key.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show(this, "Unable to load settings from registry", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveSettings(bool isOnClose)
+        {
+            RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\LocoProgrammer");
+
+            if (isOnClose)
+            {
+                key.SetValue("ReadOnSelect", chkReadOnPinSelect.Checked);
+                key.SetValue("EnableSound", frmMonitorOccupation.enableSound);
+            }
+            else
+            { 
+                key.SetValue("Handshake", chkHandshake.Checked);
+                key.SetValue("LocoSerial", rbLocoSerial.Checked);
+                key.SetValue("LocoTCP", rbLocoTCP.Checked);
+                key.SetValue("SerialPorts", cmbSerialPorts.SelectedItem?.ToString() ?? "");
+                key.SetValue("SerialSpeed", cmbSerialSpeed.SelectedItem?.ToString() ?? "");
+                key.SetValue("Server", txtServer.Text);
+                key.SetValue("Port", txtPort.Text);
+            }
+
+            key.Close();
+        }
+
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -495,6 +546,7 @@ namespace LocoProgrammer
             cmbSerialSpeed.SelectedIndex = 0;
             cmbSerialPorts.Text = "COM7";
             this.Text = this.Text + " [" + Assembly.GetExecutingAssembly().GetName().Version.ToString() + "] - " + Assembly.GetExecutingAssembly().GetLinkerTime();
+            LoadSettings();
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -521,6 +573,7 @@ namespace LocoProgrammer
                     lnDeviceList = new LNcsDeviceManager(LoconetComs, this);
                     lnDeviceList.onLoconetDeviceDiscovered += LnDiscover_onLoconetDeviceDiscovered;
                 }
+                SaveSettings(false);
             }
             catch (Exception ex)
             {
@@ -556,6 +609,7 @@ namespace LocoProgrammer
                     LoconetComs.Disconnect();
                 }
             }
+            SaveSettings(true);
         }
 
         private void cmbSerialPorts_Enter(object sender, EventArgs e)
@@ -886,6 +940,16 @@ namespace LocoProgrammer
                 lblBoard.Text = "Board: " + board.ToString() + ", Pin: " + (pinID % 16).ToString();
                 previousSelectedIndexAspect = cmbPWMPin.SelectedIndex;
                 SetConfigToFields((byte)(pinID));
+
+                if (selectedLncsDevice != null)
+                {
+                    txtDescription.OriginalText = AspectDescriptionHelper.GetDescriptionById($"{selectedLncsDevice.DeviceID}-{selectedLncsDevice.DeviceAddres}", pinID);
+                }
+
+                //Ensure to disable use previous pin for pin 0.
+                if (!chkUsePreviousPin.Enabled)
+                    chkUsePreviousPin.Checked = false;
+
             }
         }
 
@@ -995,6 +1059,7 @@ namespace LocoProgrammer
             SelectedLncsDevice = null;
             lvDevices.Items.Clear();
             UpdateStatus();
+            rbLocoMethod_CheckedChanged(null, null);
         }
 
         private void btnI2CScan_Click(object sender, EventArgs e)
@@ -1096,42 +1161,42 @@ namespace LocoProgrammer
 
         private void lblAspectR0_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Red0, txtData1Red0, cmbInstrRed0, "Red Aspect 1");
+            ShowAspectEditor(txtData0Red0, txtData1Red0, cmbInstrRed0, "Red\\Thrown Aspect 1");
         }
 
         private void lblAspectR1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Red1, txtData1Red1, cmbInstrRed1, "Red Aspect 2");
+            ShowAspectEditor(txtData0Red1, txtData1Red1, cmbInstrRed1, "Red\\Thrown Aspect 2");
         }
 
         private void lblAspectR2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Red2, txtData1Red2, cmbInstrRed2, "Red Aspect 3");
+            ShowAspectEditor(txtData0Red2, txtData1Red2, cmbInstrRed2, "Red\\Thrown Aspect 3");
         }
 
         private void lblAspectR3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Red3, txtData1Red3, cmbInstrRed3, "Red Aspect 4");
+            ShowAspectEditor(txtData0Red3, txtData1Red3, cmbInstrRed3, "Red\\Thrown Aspect 4");
         }
 
         private void lblAspectG0_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Green0, txtData1Green0, cmbInstrGreen0, "Green Aspect 1");
+            ShowAspectEditor(txtData0Green0, txtData1Green0, cmbInstrGreen0, "Green\\Closed Aspect 1");
         }
 
         private void lblAspectG1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Green1, txtData1Green1, cmbInstrGreen1, "Green Aspect 2");
+            ShowAspectEditor(txtData0Green1, txtData1Green1, cmbInstrGreen1, "Green\\Closed Aspect 2");
         }
 
         private void lblAspectG2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Green2, txtData1Green2, cmbInstrGreen2, "Green Aspect 3");
+            ShowAspectEditor(txtData0Green2, txtData1Green2, cmbInstrGreen2, "Green\\Closed Aspect 3");
         }
 
         private void lblAspectG3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowAspectEditor(txtData0Green3, txtData1Green3, cmbInstrGreen3, "Green Aspect 4");
+            ShowAspectEditor(txtData0Green3, txtData1Green3, cmbInstrGreen3, "Green\\Closed Aspect 4");
         }
 
         private void btnCalcPinCount_Click(object sender, EventArgs e)
@@ -1508,6 +1573,17 @@ namespace LocoProgrammer
             MessageBox.Show(this, "LocoConnect and LocoProgrammer\r\n\r\nCopyright 2024, Roeland Kluit.\r\n\r\n" +
                                 "File Dialog extender:  Copyright (c) 2006, Gustavo Franco, Decebal Mihailescu 2015.\r\n" +
                                 "Loconet over TCP: Copyright (c) 2020, by Martin Pischky and Stefan Bormann.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescription_ButtonClick(object sender, EventArgs e)
+        {
+            AspectDescriptionHelper.UpdateOrAddDescription($"{selectedLncsDevice.DeviceID}-{selectedLncsDevice.DeviceAddres}", previousSelectedIndexAspect, txtDescription.Text);
+            txtDescription.OriginalText = txtDescription.Text;
         }
     }
 }

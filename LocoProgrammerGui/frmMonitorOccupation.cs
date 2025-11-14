@@ -62,6 +62,8 @@ namespace LocoProgrammer
 {
     public partial class frmMonitorOccupation : Form
     {
+        public static bool enableSound = false;
+
         LncsDevice lnDevice;
         public frmMonitorOccupation(LncsDevice lnDevice, uint S88Start, uint S88Count)
         {
@@ -180,18 +182,26 @@ namespace LocoProgrammer
         private void frmMonitorOccupation_Load(object sender, EventArgs e)
         {
             if (Owner != null)
-                Location = new Point(Owner.Location.X + Owner.Width / 2 - Width / 2,
-                    Owner.Location.Y + Owner.Height / 2 - Height / 2);
+            {
+                Location = new Point(Owner.Location.X + Owner.Width / 2 - Width / 2, Owner.Location.Y + Owner.Height / 2 - Height / 2);
+            }
+
+            if (frmMonitorOccupation.enableSound)
+            {
+                chkSound.Checked = true;
+            }
         }
 
         private void chkSound_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSound.Checked)
             {
+                frmMonitorOccupation.enableSound = true;
                 chkSound.Image = Properties.Resources.volume_on;
             }
             else
             {
+                frmMonitorOccupation.enableSound = false;
                 chkSound.Image = Properties.Resources.volume_off;
             }
         }

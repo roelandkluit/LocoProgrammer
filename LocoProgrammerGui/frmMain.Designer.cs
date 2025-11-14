@@ -1,4 +1,6 @@
-﻿namespace LocoProgrammer
+﻿using LocoProgrammerUserControls;
+
+namespace LocoProgrammer
 {
     partial class frmMain
     {
@@ -122,6 +124,7 @@
             this.txtModuleAddress_I2C = new LocoProgrammerUserControls.ucButtonTextBox();
             this.tabPWMpinConfig = new System.Windows.Forms.TabPage();
             this.grpPWMOutput = new System.Windows.Forms.GroupBox();
+            this.txtDescription = new LocoProgrammerUserControls.ucButtonTextBox();
             this.btnWriteAspectChain = new System.Windows.Forms.Button();
             this.lblBoard = new System.Windows.Forms.Label();
             this.btnExportConfig = new System.Windows.Forms.Button();
@@ -266,7 +269,7 @@
             this.grpConnection.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpConnection.Location = new System.Drawing.Point(0, 0);
             this.grpConnection.Name = "grpConnection";
-            this.grpConnection.Size = new System.Drawing.Size(792, 77);
+            this.grpConnection.Size = new System.Drawing.Size(919, 77);
             this.grpConnection.TabIndex = 8;
             this.grpConnection.TabStop = false;
             this.grpConnection.Text = "Loconet Connection";
@@ -276,16 +279,16 @@
             this.chkHandshake.AutoSize = true;
             this.chkHandshake.Location = new System.Drawing.Point(340, 18);
             this.chkHandshake.Name = "chkHandshake";
-            this.chkHandshake.Size = new System.Drawing.Size(98, 17);
+            this.chkHandshake.Size = new System.Drawing.Size(175, 17);
             this.chkHandshake.TabIndex = 12;
-            this.chkHandshake.Text = "No Handshake";
+            this.chkHandshake.Text = "No Handshake (For Intellibox 2)";
             this.chkHandshake.UseVisualStyleBackColor = true;
             // 
             // btnStop
             // 
             this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(701, 43);
+            this.btnStop.Location = new System.Drawing.Point(828, 43);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 11;
@@ -297,7 +300,7 @@
             // 
             this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGo.Enabled = false;
-            this.btnGo.Location = new System.Drawing.Point(701, 20);
+            this.btnGo.Location = new System.Drawing.Point(828, 20);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(75, 23);
             this.btnGo.TabIndex = 10;
@@ -405,7 +408,7 @@
             this.grpDevices.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpDevices.Location = new System.Drawing.Point(0, 77);
             this.grpDevices.Name = "grpDevices";
-            this.grpDevices.Size = new System.Drawing.Size(792, 153);
+            this.grpDevices.Size = new System.Drawing.Size(919, 153);
             this.grpDevices.TabIndex = 9;
             this.grpDevices.TabStop = false;
             this.grpDevices.Text = "Devices";
@@ -427,7 +430,7 @@
             this.lvDevices.Location = new System.Drawing.Point(3, 16);
             this.lvDevices.MultiSelect = false;
             this.lvDevices.Name = "lvDevices";
-            this.lvDevices.Size = new System.Drawing.Size(786, 134);
+            this.lvDevices.Size = new System.Drawing.Size(913, 134);
             this.lvDevices.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvDevices.TabIndex = 9;
             this.lvDevices.UseCompatibleStateImageBehavior = false;
@@ -487,7 +490,7 @@
             this.tabDeviceConfig.Location = new System.Drawing.Point(0, 230);
             this.tabDeviceConfig.Name = "tabDeviceConfig";
             this.tabDeviceConfig.SelectedIndex = 0;
-            this.tabDeviceConfig.Size = new System.Drawing.Size(792, 386);
+            this.tabDeviceConfig.Size = new System.Drawing.Size(919, 386);
             this.tabDeviceConfig.TabIndex = 11;
             this.tabDeviceConfig.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlConfig_Selecting);
             // 
@@ -518,7 +521,7 @@
             this.tabGenConfig.Location = new System.Drawing.Point(4, 22);
             this.tabGenConfig.Name = "tabGenConfig";
             this.tabGenConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGenConfig.Size = new System.Drawing.Size(784, 360);
+            this.tabGenConfig.Size = new System.Drawing.Size(911, 360);
             this.tabGenConfig.TabIndex = 2;
             this.tabGenConfig.Text = "Device Settings";
             this.tabGenConfig.UseVisualStyleBackColor = true;
@@ -562,7 +565,7 @@
             // chkAllowFactoryDefaults
             // 
             this.chkAllowFactoryDefaults.AutoSize = true;
-            this.chkAllowFactoryDefaults.Location = new System.Drawing.Point(563, 20);
+            this.chkAllowFactoryDefaults.Location = new System.Drawing.Point(379, 20);
             this.chkAllowFactoryDefaults.Name = "chkAllowFactoryDefaults";
             this.chkAllowFactoryDefaults.Size = new System.Drawing.Size(129, 17);
             this.chkAllowFactoryDefaults.TabIndex = 47;
@@ -573,7 +576,7 @@
             // btnReboot
             // 
             this.btnReboot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReboot.Location = new System.Drawing.Point(380, 41);
+            this.btnReboot.Location = new System.Drawing.Point(507, 41);
             this.btnReboot.Name = "btnReboot";
             this.btnReboot.Size = new System.Drawing.Size(175, 23);
             this.btnReboot.TabIndex = 46;
@@ -677,7 +680,7 @@
             // 
             this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReset.Enabled = false;
-            this.btnReset.Location = new System.Drawing.Point(380, 16);
+            this.btnReset.Location = new System.Drawing.Point(507, 16);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(175, 23);
             this.btnReset.TabIndex = 36;
@@ -749,7 +752,7 @@
             this.tabLNS88Config.Location = new System.Drawing.Point(4, 22);
             this.tabLNS88Config.Name = "tabLNS88Config";
             this.tabLNS88Config.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLNS88Config.Size = new System.Drawing.Size(784, 360);
+            this.tabLNS88Config.Size = new System.Drawing.Size(911, 360);
             this.tabLNS88Config.TabIndex = 0;
             this.tabLNS88Config.Text = "Loconet S88 Configuration";
             this.tabLNS88Config.UseVisualStyleBackColor = true;
@@ -785,7 +788,7 @@
             this.grpDevConfig.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpDevConfig.Location = new System.Drawing.Point(3, 3);
             this.grpDevConfig.Name = "grpDevConfig";
-            this.grpDevConfig.Size = new System.Drawing.Size(778, 261);
+            this.grpDevConfig.Size = new System.Drawing.Size(905, 261);
             this.grpDevConfig.TabIndex = 11;
             this.grpDevConfig.TabStop = false;
             this.grpDevConfig.Text = "S88 Device Configuration";
@@ -1045,7 +1048,7 @@
             this.tabLNI2CConfig.Controls.Add(this.txtModuleAddress_I2C);
             this.tabLNI2CConfig.Location = new System.Drawing.Point(4, 22);
             this.tabLNI2CConfig.Name = "tabLNI2CConfig";
-            this.tabLNI2CConfig.Size = new System.Drawing.Size(784, 360);
+            this.tabLNI2CConfig.Size = new System.Drawing.Size(911, 360);
             this.tabLNI2CConfig.TabIndex = 3;
             this.tabLNI2CConfig.Text = "I2C Feedback Monitor Configuration";
             this.tabLNI2CConfig.UseVisualStyleBackColor = true;
@@ -1194,13 +1197,14 @@
             this.tabPWMpinConfig.Location = new System.Drawing.Point(4, 22);
             this.tabPWMpinConfig.Name = "tabPWMpinConfig";
             this.tabPWMpinConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPWMpinConfig.Size = new System.Drawing.Size(784, 360);
+            this.tabPWMpinConfig.Size = new System.Drawing.Size(911, 360);
             this.tabPWMpinConfig.TabIndex = 1;
             this.tabPWMpinConfig.Text = "Outputs Configuration";
             this.tabPWMpinConfig.UseVisualStyleBackColor = true;
             // 
             // grpPWMOutput
             // 
+            this.grpPWMOutput.Controls.Add(this.txtDescription);
             this.grpPWMOutput.Controls.Add(this.btnWriteAspectChain);
             this.grpPWMOutput.Controls.Add(this.lblBoard);
             this.grpPWMOutput.Controls.Add(this.btnExportConfig);
@@ -1229,10 +1233,21 @@
             this.grpPWMOutput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpPWMOutput.Location = new System.Drawing.Point(3, 3);
             this.grpPWMOutput.Name = "grpPWMOutput";
-            this.grpPWMOutput.Size = new System.Drawing.Size(778, 354);
+            this.grpPWMOutput.Size = new System.Drawing.Size(905, 354);
             this.grpPWMOutput.TabIndex = 0;
             this.grpPWMOutput.TabStop = false;
             this.grpPWMOutput.Text = "Output PWM Pin Configuration (PCA9685 - I2C 0x60, 0x61, 0x62 && 0x63)";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(347, 43);
+            this.txtDescription.MustBeNumeric = false;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.OriginalText = "";
+            this.txtDescription.Size = new System.Drawing.Size(421, 20);
+            this.txtDescription.TabIndex = 25;
+            this.txtDescription.ButtonClick += new System.EventHandler(this.txtDescription_ButtonClick);
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // btnWriteAspectChain
             // 
@@ -1255,7 +1270,7 @@
             // 
             // btnExportConfig
             // 
-            this.btnExportConfig.Location = new System.Drawing.Point(431, 9);
+            this.btnExportConfig.Location = new System.Drawing.Point(787, 230);
             this.btnExportConfig.Name = "btnExportConfig";
             this.btnExportConfig.Size = new System.Drawing.Size(112, 29);
             this.btnExportConfig.TabIndex = 22;
@@ -1309,7 +1324,7 @@
             // 
             this.btnExport.Image = global::LocoProgrammer.Properties.Resources.export_icon;
             this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExport.Location = new System.Drawing.Point(659, 9);
+            this.btnExport.Location = new System.Drawing.Point(787, 13);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(112, 29);
             this.btnExport.TabIndex = 17;
@@ -1322,7 +1337,7 @@
             // 
             this.btnImportConfig.Image = global::LocoProgrammer.Properties.Resources.import_icon;
             this.btnImportConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImportConfig.Location = new System.Drawing.Point(545, 9);
+            this.btnImportConfig.Location = new System.Drawing.Point(787, 48);
             this.btnImportConfig.Name = "btnImportConfig";
             this.btnImportConfig.Size = new System.Drawing.Size(112, 29);
             this.btnImportConfig.TabIndex = 16;
@@ -1381,7 +1396,7 @@
             // chkReadOnPinSelect
             // 
             this.chkReadOnPinSelect.AutoSize = true;
-            this.chkReadOnPinSelect.Location = new System.Drawing.Point(121, 18);
+            this.chkReadOnPinSelect.Location = new System.Drawing.Point(120, 19);
             this.chkReadOnPinSelect.Name = "chkReadOnPinSelect";
             this.chkReadOnPinSelect.Size = new System.Drawing.Size(131, 17);
             this.chkReadOnPinSelect.TabIndex = 10;
@@ -1626,7 +1641,7 @@
             // chkPinInvertOutput
             // 
             this.chkPinInvertOutput.AutoSize = true;
-            this.chkPinInvertOutput.Location = new System.Drawing.Point(515, 44);
+            this.chkPinInvertOutput.Location = new System.Drawing.Point(575, 20);
             this.chkPinInvertOutput.Name = "chkPinInvertOutput";
             this.chkPinInvertOutput.Size = new System.Drawing.Size(192, 17);
             this.chkPinInvertOutput.TabIndex = 6;
@@ -1637,7 +1652,7 @@
             // chkUsePreviousPin
             // 
             this.chkUsePreviousPin.AutoSize = true;
-            this.chkUsePreviousPin.Location = new System.Drawing.Point(346, 44);
+            this.chkUsePreviousPin.Location = new System.Drawing.Point(405, 20);
             this.chkUsePreviousPin.Name = "chkUsePreviousPin";
             this.chkUsePreviousPin.Size = new System.Drawing.Size(162, 17);
             this.chkUsePreviousPin.TabIndex = 5;
@@ -1902,7 +1917,7 @@
             this.tabVL530L0.Location = new System.Drawing.Point(4, 22);
             this.tabVL530L0.Name = "tabVL530L0";
             this.tabVL530L0.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVL530L0.Size = new System.Drawing.Size(784, 360);
+            this.tabVL530L0.Size = new System.Drawing.Size(911, 360);
             this.tabVL530L0.TabIndex = 4;
             this.tabVL530L0.Text = "VL53L0x Configuration";
             this.tabVL530L0.UseVisualStyleBackColor = true;
@@ -2344,7 +2359,7 @@
             this.toolStripStatusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 594);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(792, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(919, 22);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -2359,7 +2374,7 @@
             // 
             this.toolStripStatusLabel.AutoSize = false;
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(662, 17);
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(789, 17);
             this.toolStripStatusLabel.Spring = true;
             this.toolStripStatusLabel.Text = "-";
             this.toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2367,11 +2382,11 @@
             // txtLog
             // 
             this.txtLog.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtLog.Location = new System.Drawing.Point(0, 519);
+            this.txtLog.Location = new System.Drawing.Point(0, 520);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(792, 75);
+            this.txtLog.Size = new System.Drawing.Size(919, 74);
             this.txtLog.TabIndex = 13;
             this.txtLog.WordWrap = false;
             // 
@@ -2379,7 +2394,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 616);
+            this.ClientSize = new System.Drawing.Size(919, 616);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabDeviceConfig);
@@ -2615,7 +2630,6 @@
         private LocoProgrammerUserControls.ucButtonTextBox txtVL53Sensor4val;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.ToolStripStatusLabel toolStripCopyright;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.Label lblLastAddr;
@@ -2625,6 +2639,8 @@
         private System.Windows.Forms.Label lblBootloaderVersion;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.CheckBox chkUsePCF8574T;
+        private ucButtonTextBox txtDescription;
+        private System.Windows.Forms.TextBox txtLog;
     }
 }
 

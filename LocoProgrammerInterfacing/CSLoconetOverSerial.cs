@@ -135,6 +135,10 @@ namespace LocoProgrammerInterfacing
         {
             lock (bufferData)
             {
+                if(bufferPos +datalen > bufferData.Length)
+                {
+                    bufferPos = 0;
+                }
                 Array.Copy(data, 0, bufferData, bufferPos, datalen);
                 bufferPos += datalen;
             }
