@@ -940,6 +940,16 @@ namespace LocoProgrammer
                 lblBoard.Text = "Board: " + board.ToString() + ", Pin: " + (pinID % 16).ToString();
                 previousSelectedIndexAspect = cmbPWMPin.SelectedIndex;
                 SetConfigToFields((byte)(pinID));
+
+                if (selectedLncsDevice != null)
+                {
+                    txtDescription.OriginalText = AspectDescriptionHelper.GetDescriptionById($"{selectedLncsDevice.DeviceID}-{selectedLncsDevice.DeviceAddres}", pinID);
+                }
+
+                //Ensure to disable use previous pin for pin 0.
+                if (!chkUsePreviousPin.Enabled)
+                    chkUsePreviousPin.Checked = false;
+
             }
         }
 
@@ -1563,6 +1573,17 @@ namespace LocoProgrammer
             MessageBox.Show(this, "LocoConnect and LocoProgrammer\r\n\r\nCopyright 2024, Roeland Kluit.\r\n\r\n" +
                                 "File Dialog extender:  Copyright (c) 2006, Gustavo Franco, Decebal Mihailescu 2015.\r\n" +
                                 "Loconet over TCP: Copyright (c) 2020, by Martin Pischky and Stefan Bormann.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescription_ButtonClick(object sender, EventArgs e)
+        {
+            AspectDescriptionHelper.UpdateOrAddDescription($"{selectedLncsDevice.DeviceID}-{selectedLncsDevice.DeviceAddres}", previousSelectedIndexAspect, txtDescription.Text);
+            txtDescription.OriginalText = txtDescription.Text;
         }
     }
 }

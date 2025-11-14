@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspectDescriptionHelper.cs" />
     <Compile Include="AspectImportExport.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>

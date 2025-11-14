@@ -1,4 +1,6 @@
-﻿namespace LocoProgrammer
+﻿using LocoProgrammerUserControls;
+
+namespace LocoProgrammer
 {
     partial class frmMain
     {
@@ -122,7 +124,7 @@
             this.txtModuleAddress_I2C = new LocoProgrammerUserControls.ucButtonTextBox();
             this.tabPWMpinConfig = new System.Windows.Forms.TabPage();
             this.grpPWMOutput = new System.Windows.Forms.GroupBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtDescription = new LocoProgrammerUserControls.ucButtonTextBox();
             this.btnWriteAspectChain = new System.Windows.Forms.Button();
             this.lblBoard = new System.Windows.Forms.Label();
             this.btnExportConfig = new System.Windows.Forms.Button();
@@ -1239,10 +1241,13 @@
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(347, 43);
-            this.txtDescription.Multiline = true;
+            this.txtDescription.MustBeNumeric = false;
             this.txtDescription.Name = "txtDescription";
+            this.txtDescription.OriginalText = "";
             this.txtDescription.Size = new System.Drawing.Size(421, 20);
             this.txtDescription.TabIndex = 25;
+            this.txtDescription.ButtonClick += new System.EventHandler(this.txtDescription_ButtonClick);
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // btnWriteAspectChain
             // 
@@ -2634,7 +2639,7 @@
         private System.Windows.Forms.Label lblBootloaderVersion;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.CheckBox chkUsePCF8574T;
-        private System.Windows.Forms.TextBox txtDescription;
+        private ucButtonTextBox txtDescription;
         private System.Windows.Forms.TextBox txtLog;
     }
 }
