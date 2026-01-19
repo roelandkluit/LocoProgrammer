@@ -889,6 +889,8 @@ namespace LocoProgrammer
                         //btnReadAspect.BackColor = Color.Transparent;
                         //btnWriteAspect.BackColor = Color.Transparent;
                         CurrentAspectIsDirty = false;
+
+                        txtDescription_ButtonClick(sender, e);
                     }
                     else
                     {
@@ -1037,8 +1039,11 @@ namespace LocoProgrammer
                 {
                     LoconetComs.Disconnect();
                 }
-                LoconetComs.LoconetFrameRecieved -= LoconetComs_LoconetFrameRecieved;
-                LoconetComs.LoconetConnectionClosed -= LoconetComs_LoconetConnectionClosed;
+                if (LoconetComs != null)
+                {
+                    LoconetComs.LoconetFrameRecieved -= LoconetComs_LoconetFrameRecieved;
+                    LoconetComs.LoconetConnectionClosed -= LoconetComs_LoconetConnectionClosed;
+                }
 
             }
             catch { }
