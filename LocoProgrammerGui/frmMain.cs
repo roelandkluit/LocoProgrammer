@@ -403,7 +403,11 @@ namespace LocoProgrammer
                 uint val = lncLocoReader.GetCVValue(CustDefines.CVADDRESS.CV_ACCESSORY_BOOTLOADER_VERSION);
                 if (val != 0 && val != 0xFFFF)
                 {
-                    lblBootloaderVersion.Text = (val >> 4).ToString() + "." + (val & 0xF).ToString();
+                    lblBootloaderVersion.Text = ((val >> 4) & 0x7).ToString() + "." + (val & 0xF).ToString();
+                    if ((val & 0x80) == 0x80)
+                    {
+                        lblBootloaderVersion.Text += " (VLX)";
+                    }
                 }
                 else
                 {
@@ -1037,8 +1041,11 @@ namespace LocoProgrammer
                 {
                     LoconetComs.Disconnect();
                 }
-                LoconetComs.LoconetFrameRecieved -= LoconetComs_LoconetFrameRecieved;
-                LoconetComs.LoconetConnectionClosed -= LoconetComs_LoconetConnectionClosed;
+                if (LoconetComs != null)
+                {
+                    LoconetComs.LoconetFrameRecieved -= LoconetComs_LoconetFrameRecieved;
+                    LoconetComs.LoconetConnectionClosed -= LoconetComs_LoconetConnectionClosed;
+                }
 
             }
             catch { }
