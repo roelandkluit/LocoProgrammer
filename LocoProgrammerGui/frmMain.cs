@@ -893,6 +893,8 @@ namespace LocoProgrammer
                         //btnReadAspect.BackColor = Color.Transparent;
                         //btnWriteAspect.BackColor = Color.Transparent;
                         CurrentAspectIsDirty = false;
+
+                        txtDescription_ButtonClick(sender, e);
                     }
                     else
                     {
