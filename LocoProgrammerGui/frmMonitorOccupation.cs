@@ -65,27 +65,42 @@ namespace LocoProgrammer
         public static bool enableSound = false;
 
         LncsDevice lnDevice;
-        public frmMonitorOccupation(LncsDevice lnDevice, uint S88Start, uint S88Count)
-        {
-            if (S88Start == 0 || S88Count == 0)
-            {
-                MessageBox.Show(this, "Cannot watch when count or start address is 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                throw new ArgumentOutOfRangeException();
-            }
 
+        public frmMonitorOccupation(LoconetComsLayer lnComms, uint S88Start, uint S88Count = 256)
+        {
             InitializeComponent();
+            AddItems(S88Start, S88Count);
+            lnComms.LoconetFrameRecieved += ComsLayer_LoconetFrameRecieved;
+        }
+
+        private void AddItems(uint S88Start, uint S88Count)
+        {
             for (uint i = 0; i < S88Count; i++)
             {
                 uint contact = (S88Start + i);
                 uint pos = i % 16;
                 uint line = i / 16;
 
+                if (pos == 0)
+                {
+                    Label ll = new Label();
+                    ll.Name = "LlinePos" + pos;
+                    ll.Tag = null;
+                    ll.Font = new Font(Label.DefaultFont, FontStyle.Bold);
+                    ll.Text = contact.ToString();
+
+                    ll.Left = 5;
+                    ll.Top = 20 + (int)(line * 40);
+                    ll.AutoSize = true;
+                    this.Controls.Add(ll);
+                }
+
                 Label l = new Label();
                 l.Name = "L" + contact;
                 l.Tag = null;
                 l.Text = LNF_OPC_INPUT_REP.ToDottedContact(contact);
 
-                l.Left = 10 + (int)(pos * 45);
+                l.Left = 50 + (int)(pos * 45);
                 l.Top = 20 + (int)(line * 40);
                 l.AutoSize = true;
                 this.Controls.Add(l);
@@ -101,6 +116,18 @@ namespace LocoProgrammer
 
                 this.Controls.Add(p);
             }
+        }
+
+        public frmMonitorOccupation(LncsDevice lnDevice, uint S88Start, uint S88Count)
+        {
+            if (S88Start == 0 || S88Count == 0)
+            {
+                MessageBox.Show(this, "Cannot watch when count or start address is 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                throw new ArgumentOutOfRangeException();
+            }
+
+            InitializeComponent();
+            AddItems(S88Start, S88Count);
             this.lnDevice = lnDevice;
             lnDevice.Parent.LnComsLayer.LoconetFrameRecieved += ComsLayer_LoconetFrameRecieved;
         }
@@ -139,18 +166,23 @@ namespace LocoProgrammer
             
         }
 
+        private DateTime LastSoundPlay = DateTime.MinValue;
+
         private void playSound(bool isActivating)
         {
-            if (chkSound.Checked)
+            if (DateTime.UtcNow - LastSoundPlay > TimeSpan.FromMilliseconds(500))
             {
-
-                System.IO.UnmanagedMemoryStream sound;                
-                if (isActivating)
-                    sound = Properties.Resources.beep_07a;
-                else
-                    sound = Properties.Resources.beep_08b;
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(sound);
-                player.Play();
+                if (chkSound.Checked)
+                {
+                    System.IO.UnmanagedMemoryStream sound;
+                    if (isActivating)
+                        sound = Properties.Resources.beep_07a;
+                    else
+                        sound = Properties.Resources.beep_08b;
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(sound);
+                    player.Play();
+                    LastSoundPlay = DateTime.UtcNow;
+                }
             }
         }
         private void tmrBoldtoNormal_Tick(object sender, EventArgs e)
@@ -176,7 +208,10 @@ namespace LocoProgrammer
 
         private void frmMonitorOccupation_Shown(object sender, EventArgs e)
         {
-            lnDevice.RecieveDeviceInformationFromSingleAddress((ushort)CustDefines.CVADDRESS.SV_REPORTALL);
+            if (lnDevice != null)
+            {
+                lnDevice.RecieveDeviceInformationFromSingleAddress((ushort)CustDefines.CVADDRESS.SV_REPORTALL);
+            }
         }
 
         private void frmMonitorOccupation_Load(object sender, EventArgs e)

@@ -32,6 +32,7 @@ namespace LocoProgrammer
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.grpConnection = new System.Windows.Forms.GroupBox();
+            this.btnWatchOccupation = new System.Windows.Forms.Button();
             this.chkHandshake = new System.Windows.Forms.CheckBox();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnGo = new System.Windows.Forms.Button();
@@ -236,6 +237,7 @@ namespace LocoProgrammer
             this.toolStripCopyright = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtLog = new System.Windows.Forms.TextBox();
+            this.cmbStartIndex = new System.Windows.Forms.ComboBox();
             this.grpConnection.SuspendLayout();
             this.grpDevices.SuspendLayout();
             this.tabDeviceConfig.SuspendLayout();
@@ -254,6 +256,8 @@ namespace LocoProgrammer
             // 
             // grpConnection
             // 
+            this.grpConnection.Controls.Add(this.cmbStartIndex);
+            this.grpConnection.Controls.Add(this.btnWatchOccupation);
             this.grpConnection.Controls.Add(this.chkHandshake);
             this.grpConnection.Controls.Add(this.btnStop);
             this.grpConnection.Controls.Add(this.btnGo);
@@ -273,6 +277,17 @@ namespace LocoProgrammer
             this.grpConnection.TabIndex = 8;
             this.grpConnection.TabStop = false;
             this.grpConnection.Text = "Loconet Connection";
+            // 
+            // btnWatchOccupation
+            // 
+            this.btnWatchOccupation.Enabled = false;
+            this.btnWatchOccupation.Location = new System.Drawing.Point(708, 43);
+            this.btnWatchOccupation.Name = "btnWatchOccupation";
+            this.btnWatchOccupation.Size = new System.Drawing.Size(84, 23);
+            this.btnWatchOccupation.TabIndex = 13;
+            this.btnWatchOccupation.Text = "Occupation";
+            this.btnWatchOccupation.UseVisualStyleBackColor = true;
+            this.btnWatchOccupation.Click += new System.EventHandler(this.btnWatchOccupation_Click);
             // 
             // chkHandshake
             // 
@@ -2390,6 +2405,15 @@ namespace LocoProgrammer
             this.txtLog.TabIndex = 13;
             this.txtLog.WordWrap = false;
             // 
+            // cmbStartIndex
+            // 
+            this.cmbStartIndex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStartIndex.FormattingEnabled = true;
+            this.cmbStartIndex.Location = new System.Drawing.Point(708, 22);
+            this.cmbStartIndex.Name = "cmbStartIndex";
+            this.cmbStartIndex.Size = new System.Drawing.Size(84, 21);
+            this.cmbStartIndex.TabIndex = 14;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2641,6 +2665,8 @@ namespace LocoProgrammer
         private System.Windows.Forms.CheckBox chkUsePCF8574T;
         private ucButtonTextBox txtDescription;
         private System.Windows.Forms.TextBox txtLog;
+        private System.Windows.Forms.Button btnWatchOccupation;
+        private System.Windows.Forms.ComboBox cmbStartIndex;
     }
 }
 

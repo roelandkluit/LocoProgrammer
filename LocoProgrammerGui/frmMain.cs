@@ -551,6 +551,12 @@ namespace LocoProgrammer
             cmbSerialPorts.Text = "COM7";
             this.Text = this.Text + " [" + Assembly.GetExecutingAssembly().GetName().Version.ToString() + "] - " + Assembly.GetExecutingAssembly().GetLinkerTime();
             LoadSettings();
+            for(int i = 1; i < 128; i++)
+            {
+                cmbStartIndex.Items.Add(i.ToString());
+            }
+            cmbStartIndex.SelectedIndex = 0;
+
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -588,6 +594,7 @@ namespace LocoProgrammer
                 return;
             }
 
+            btnWatchOccupation.Enabled = true;
             btnConnect.Visible = false;
             btnConnect.Enabled = true;
             btnDisconnect.Visible = true;
@@ -1054,6 +1061,7 @@ namespace LocoProgrammer
             LoconetComs = null;
             lnDeviceList = null;
             btnConnect.Visible = true;
+            btnWatchOccupation.Enabled = false;
             btnDisconnect.Visible = false;
             rbLocoSerial.Enabled = true;
             cmbSerialSpeed.Enabled = true;
@@ -1593,6 +1601,17 @@ namespace LocoProgrammer
         {
             AspectDescriptionHelper.UpdateOrAddDescription($"{selectedLncsDevice.DeviceID}-{selectedLncsDevice.DeviceAddres}", previousSelectedIndexAspect, txtDescription.Text);
             txtDescription.OriginalText = txtDescription.Text;
+        }
+
+        private void btnWatchOccupation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmMonitorOccupation frm = new frmMonitorOccupation(this.LoconetComs, ((uint.Parse(cmbStartIndex.Text) - 1) * 16) + 1);
+                frm.Show(this);
+            }
+            catch { }
+
         }
     }
 }

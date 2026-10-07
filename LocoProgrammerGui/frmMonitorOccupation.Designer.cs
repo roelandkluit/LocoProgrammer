@@ -60,8 +60,9 @@ namespace LocoProgrammer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 473);
             this.Controls.Add(this.chkSound);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(804, 1024);
+            this.MinimumSize = new System.Drawing.Size(804, 512);
             this.Name = "frmMonitorOccupation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "S88 Occupation Monitor";
